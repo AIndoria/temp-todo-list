@@ -12,7 +12,7 @@
       </div>
       <div class="list">
         <ul>
-          <li v-for="task in tasks">{{task}}</li>
+          <li v-for="task in tasks">{{task.name}}</li>
         </ul>
       </div>
       <div class="buttons">
@@ -26,12 +26,18 @@
       new Vue({
         el: ".main",
         data: {
-          tasks:["You can delete a task by clicking on it."],
+          tasks:[
+            {name:"You can delete tasks by clicking on it.", completed:false},
+            {name:"Of course, it's not implemented yet.", completed:false}
+        ],
           newTask:""
         },
         methods:{
           addTask(){
-            this.tasks.push(this.newTask);
+            tasksObj={};
+            tasksObj["name"]=this.newTask;
+            tasksObj["completed"]=false;
+            this.tasks.push(tasksObj);
             this.newTask="";
           },
         }
