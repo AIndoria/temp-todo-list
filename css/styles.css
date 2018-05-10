@@ -1,0 +1,31 @@
+body{
+  background:gainsboro;
+}
+.main{
+  margin:0 25%;
+  box-shadow: 1px 1px 1px 1px grey;
+  display:flex;
+  height: 95vh;
+  flex-direction: column;
+}
+.heading{
+  border-bottom:1px solid grey;
+  flex:0.5;
+  display:flex;
+  justify-content:center;
+  margin:5px;
+
+}
+.list{
+  border-bottom:1px solid grey;
+  flex:3;
+  display:flex;
+  margin:5px;
+  justify-content:center;
+}
+.buttons{
+  padding:20px;
+  flex:0.25;
+  display:flex;
+  justify-content:center;
+}

@@ -2,24 +2,29 @@
 <html>
   <head>
     <title>ToDo List</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <meta charset="utf-8">
   </head>
   <body>
     <div class="main">
-      <h1>Temporary ToDo List</h1>
+      <div class="heading">
+        <h2>ToDo List</h2>
+      </div>
+      <div class="list">
+        <ul>
+          <li v-for="task in tasks">{{task}}</li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <input id="input" type="text" v-model="newTask">
+        <button @click="addTask">Add Task</button>
+      </div>
     </div>
-    <div id="list">
-      <ul>
-        <li v-for="task in tasks">{{task}}</li>
-      </ul>
-      <input id="input" type="text" v-model="newTask">
-      <button id="button" v-on:click="addTask">Add Task</button>
-    </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       new Vue({
-        el: "#list",
+        el: ".main",
         data: {
           tasks:["You can delete a task by clicking on it."],
           newTask:""
