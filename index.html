@@ -9,6 +9,11 @@
       <h1>Temporary ToDo List</h1>
     </div>
     <div id="list">
+      <ul>
+        <li v-for="task in tasks">{{task}}</li>
+      </ul>
+      <input id="input" type="text" v-model="newTask">
+      <button id="button" v-on:click="addTask">Add Task</button>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,7 +21,14 @@
       new Vue({
         el: "#list",
         data: {
-
+          tasks:["You can delete a task by clicking on it."],
+          newTask:""
+        },
+        methods:{
+          addTask(){
+            this.tasks.push(this.newTask);
+            this.newTask="";
+          },
         }
       });
     
